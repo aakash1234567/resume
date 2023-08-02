@@ -28,6 +28,7 @@ jobs:
       env:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        git config user.name "aakash1234567" && git config user.email "aakashkhandelwal56@gmail.com"
         git checkout --orphan gh-pages
         git rm -rf .
         mv build/* .
@@ -38,3 +39,4 @@ jobs:
     - name: Clean up
       run: |
         git checkout main
+        git branch -D gh-pages
