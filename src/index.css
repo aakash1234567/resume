@@ -1,0 +1,220 @@
+body {
+  margin: 0px;
+  font-family: cursive;
+}
+
+#root {
+  overflow: hidden;
+}
+
+p,
+h1 {
+  margin: 0px;
+}
+
+.banner_div {
+  height: 400px;
+  background: #007acc;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.banner_span_0 {
+  position: fixed;
+  margin: 1em;
+  background: #ff5270;
+  filter: drop-shadow(0px 0px 1px #ff5270);
+  border-radius: 0px 1em 1em 1em;
+  max-width: 34em;
+  padding: 0.5em;
+  color: white;
+  text-shadow: 2px 2px 0px black;
+  bottom: 0px;
+  z-index: 10;
+}
+
+.banner_span_0 p {
+  margin: 0px;
+}
+
+.banner_span_1 {
+  height: 400px;
+  position: relative;
+  display: block;
+  z-index: 1;
+  background: #ff5722;
+  transform: rotateZ(26deg) translateY(200%);
+  filter: drop-shadow(2px 4px 6px black);
+  animation: slideInFromBottom_span1 1s ease-in forwards;
+}
+
+.banner_span_2 {
+  height: 400px;
+  position: relative;
+  display: block;
+  background: #ffc107;
+  filter: drop-shadow(2px 4px 6px black);
+  z-index: 2;
+  transform: rotateZ(-24deg) translateX(35%) translateY(100%);
+  animation: slideInFromBottom_span2 1s ease-in forwards 0.5s;
+}
+
+.banner_span_3 {
+  height: 400px;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  text-align-last: center;
+  animation: slideInFromBottom_span3 1s ease-in forwards 1s;
+  transform: translateY(100%);
+}
+
+.banner_span_3 img {
+  height: 13em;
+  top: 100%;
+  position: sticky;
+  transform: translateY(-33px);
+}
+
+/* Keyframes */
+@keyframes slideInFromBottom_span1 {
+  from {
+    transform: rotateZ(26deg) translateY(200%);
+  }
+  to {
+    transform: rotateZ(26deg) translateY(100%);
+  }
+}
+@keyframes slideInFromBottom_span2 {
+  from {
+    transform: rotateZ(-24deg) translateX(35%) translateY(100%);
+  }
+  to {
+    transform: rotateZ(-24deg) translateX(35%) translateY(-40px);
+  }
+}
+@keyframes slideInFromBottom_span3 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 5;
+}
+
+.social-icons a:hover {
+  transform-origin: center;
+  transform: scale(1.5) rotate(1turn);
+  transition: all 0.3s ease 0s;
+}
+
+.social-icons img {
+  height: 2em;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 10px;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.body-content {
+  position: relative;
+  z-index: 2;
+  background: #f5f5f5;
+}
+
+.featured {
+  margin: 1em;
+  margin-top: 0px;
+  padding-top: 1em;
+}
+
+.featured h1 {
+  text-align: center;
+}
+
+.featured h1::before {
+  content: "---------";
+}
+
+.featured h1::after {
+  content: "---------";
+}
+
+/* CARD */
+
+.card {
+  height: 400px;
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-left {
+  max-width: 300px;
+  border: 1px solid #f33a5d;
+  padding: 1em;
+  box-shadow: 2px 0px 10px 0px #f33a5d;
+  transform: scale(1.1);
+  background: #fff1dd;
+}
+
+.card-right {
+  width: auto;
+  flex: 1;
+  border: 1px solid #f33a5d;
+  padding: 1em;
+}
+
+#left-hand {
+  transform-origin: 50% 50%; /* Set the rotation origin to the bottom left corner */
+  animation: rotateLine 3s infinite; /* Rotate the left-hand by 45 degrees */
+}
+@keyframes rotateLine {
+  0% {
+    transform: rotateY(0deg); /* Start with the initial rotation */
+  }
+  50% {
+    transform: rotateY(-45deg); /* Rotate in the opposite direction */
+  }
+  100% {
+    transform: rotateY(0deg); /* Return to the initial rotation */
+  }
+}
+
+.hanging-svg {
+  overflow: hidden;
+}
+
+.hanging-svg::after {
+  content: "";
+  border: 1px solid black;
+  height: 100%;
+  position: absolute;
+}
+
+#root .tongue {
+  display: none;
+}
+#root .peas:hover .tongue {
+  display: block;
+}
+#root .peas:hover .teeth {
+  display: none;
+}
+#root .spider {
+  z-index: 50;
+  /* Safari */
+  /* position: sticky; */
+}
