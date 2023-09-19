@@ -244,7 +244,9 @@ const Home = () => {
       </div>
       <Loading />
       <Suspense fallback={<Loading />}>
-        <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
+        <div className="design">
+          <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
+        </div>
       </Suspense>
     </>
   );

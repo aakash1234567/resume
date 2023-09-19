@@ -292,7 +292,6 @@ h1 {
 
 .other-content {
   padding: 1em;
-  margin-bottom: 6em;
 }
 
 .other-content h1 {
@@ -339,4 +338,10 @@ h1 {
 
 .card-links {
   margin: 1em;
+}
+
+.design {
+  margin-bottom: 6em;
+  height: 100vh;
+  width: 100vw;
 }
