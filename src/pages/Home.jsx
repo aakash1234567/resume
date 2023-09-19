@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, Suspense, lazy } from "react";
 import AOS from "aos";
 import Typed from "react-typed";
 import "aos/dist/aos.css";
@@ -7,6 +7,9 @@ import Spider from "./Spider";
 import Robot from "./Robot";
 import SocialPerson from "./SocialPerson";
 import Atropos from "atropos/react";
+const Spline = lazy(() => import("@splinetool/react-spline"));
+import { ClimbingBoxLoader } from "react-spinners";
+
 import "atropos/css";
 
 const experiences = [
@@ -46,16 +49,46 @@ const experiences = [
 const programmingLanguages = ["Python", "Javascript"];
 const technologiesFrameworks = [
   "MERN",
-  "Ionic",
-  "Flask/Django (Beginner)",
-  "Machine Learning",
-  "Image and Video Processing",
-  "Hugo",
   "Sequelize",
+  "Ionic",
   "Rich Text Editors (Quill, CKEditor, etc)",
+  "Flask/Django (Beginner)",
+  "Image and Video Processing",
+  "Machine Learning",
 ];
 const databases = ["MongoDB", "MySQL", "PostgreSQL"];
 const hardwareSkills = ["Microcontrollers"];
+
+const Loading = () => {
+  return <ClimbingBoxLoader color="#36d7b7" />;
+};
+
+const Card = () => {
+  return (
+    <Atropos className="card-atropos">
+      <div className="card">
+        <div className="card-header">
+          <h2>Project 1</h2>
+        </div>
+        <div className="card-links">
+          <button type="button">Check Live</button>
+          <button type="button">Github</button>
+          <button type="button">Gallery</button>
+        </div>
+        <div className="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+            voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Quas, voluptatibus. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Vel quisquam consequuntur rerum eos omnis ut.
+            Ipsum consectetur non architecto, optio officia facere nulla laborum
+            at dolores, repudiandae vero esse omnis.
+          </p>
+        </div>
+      </div>
+    </Atropos>
+  );
+};
 
 const JobExperience = (props) => {
   return (
@@ -205,57 +238,14 @@ const Home = () => {
       </div>
       <div className="other-content">
         <h1>Personal Projects</h1>
-        <div
-          className="featured-content"
-          data-aos="slide-right"
-          data-aos-offset="200"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-once="false"
-        >
-          <div className="card">
-            <div className="card-left">
-              <h3>Plan International</h3>
-              <p>
-                Plan International is a web application that helps you plan your
-                travel.
-              </p>
-            </div>
-            {/* <img src={PlanInternationalImg} alt="Plan International" /> */}{" "}
-            <div className="card-right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              dolore. Repellat suscipit est magni ullam nulla sequi deserunt
-              incidunt quae rem quisquam eius vitae sint dolore omnis, quaerat
-              optio! Sunt.
-            </div>
-          </div>{" "}
-        </div>
-        <div
-          className="featured-content"
-          data-aos="slide-left"
-          data-aos-offset="200"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-once="false"
-        >
-          <div className="card">
-            {/* <img src={PlanInternationalImg} alt="Plan International" /> */}{" "}
-            <div className="card-right">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              dolore. Repellat suscipit est magni ullam nulla sequi deserunt
-              incidunt quae rem quisquam eius vitae sint dolore omnis, quaerat
-              optio! Sunt.
-            </div>
-            <div className="card-left">
-              <h3>Plan International</h3>
-              <p>
-                Plan International is a web application that helps you plan your
-                travel.
-              </p>
-            </div>
-          </div>{" "}
+        <div className="cards-container">
+          <Card />
         </div>
       </div>
+      <Loading />
+      <Suspense fallback={<Loading />}>
+        <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
+      </Suspense>
     </>
   );
 };

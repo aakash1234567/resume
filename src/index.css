@@ -151,7 +151,6 @@ h1 {
   flex: 1;
   position: relative;
   overflow-x: hidden;
-  margin: auto;
 }
 
 .fixed-container {
@@ -167,48 +166,6 @@ h1 {
 .featured h1 {
   text-align: center;
   font-weight: 500;
-}
-
-/* CARD */
-
-.card {
-  height: 400px;
-  padding: 1em;
-  margin: 1em;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card-left {
-  max-width: 300px;
-  border: 1px solid #f33a5d;
-  padding: 1em;
-  box-shadow: 2px 0px 10px 0px #f33a5d;
-  transform: scale(1.1);
-  background: #fff1dd;
-}
-
-.card-right {
-  width: auto;
-  flex: 1;
-  border: 1px solid #f33a5d;
-  padding: 1em;
-}
-
-#left-hand {
-  transform-origin: 50% 50%; /* Set the rotation origin to the bottom left corner */
-  animation: rotateLine 3s infinite; /* Rotate the left-hand by 45 degrees */
-}
-@keyframes rotateLine {
-  0% {
-    transform: rotateY(0deg); /* Start with the initial rotation */
-  }
-  50% {
-    transform: rotate(-35deg); /* Rotate in the opposite direction */
-  }
-  100% {
-    transform: rotateY(0deg); /* Return to the initial rotation */
-  }
 }
 
 .hanging-svg {
@@ -302,7 +259,7 @@ h1 {
   font-size: 16px;
   margin-bottom: 5px;
   list-style-type: none;
-  font-size: 9px;
+  font-size: 12px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   color: #40e0d0;
@@ -327,4 +284,59 @@ h1 {
 
 .featured h1:hover:after {
   width: 100px;
+}
+
+.job-experience h4 {
+  margin-bottom: 5px;
+}
+
+.other-content {
+  padding: 1em;
+  margin-bottom: 6em;
+}
+
+.other-content h1 {
+  text-align: center;
+}
+
+.other-content h1:after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #40e0d0;
+  display: block;
+  margin: 1px auto;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.other-content h1:hover:after {
+  width: 100px;
+}
+
+.card-container {
+}
+
+.card-atropos {
+  width: fit-content;
+}
+
+.card {
+  height: 28em;
+  width: 21em;
+  background: aquamarine;
+  padding: 1em;
+}
+
+.card-header {
+}
+
+.card-body {
+}
+
+.card-links {
+  margin: 1em;
 }

@@ -11,11 +11,14 @@
   "license": "ISC",
   "homepage": "/resume",
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.452",
     "aos": "^2.3.4",
     "atropos": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
+    "react-spinners": "^0.13.8",
     "react-typed": "^1.2.0"
   },
   "browserslist": {
