@@ -7,7 +7,7 @@ import Spider from "./Spider";
 import Robot from "./Robot";
 import SocialPerson from "./SocialPerson";
 import Atropos from "atropos/react";
-const Spline = lazy(() => import("@splinetool/react-spline"));
+import Spline from "@splinetool/react-spline";
 import { ClimbingBoxLoader } from "react-spinners";
 
 import "atropos/css";
@@ -64,29 +64,34 @@ const Loading = () => {
 };
 
 const Card = () => {
+  const [astroposAActive, setAstroposActive] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth < 500) {
+      setAstroposActive(false);
+    }
+  }, []);
   return (
-    <Atropos className="card-atropos">
-      <div className="card">
-        <div className="card-header">
-          <h2>Project 1</h2>
-        </div>
-        <div className="card-links">
-          <button type="button">Check Live</button>
-          <button type="button">Github</button>
-          <button type="button">Gallery</button>
-        </div>
-        <div className="card-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-            voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Quas, voluptatibus. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Vel quisquam consequuntur rerum eos omnis ut.
-            Ipsum consectetur non architecto, optio officia facere nulla laborum
-            at dolores, repudiandae vero esse omnis.
-          </p>
-        </div>
+    <div className="card">
+      <div className="card-header">
+        <h2>Project 1</h2>
       </div>
-    </Atropos>
+      <div className="card-links">
+        <button type="button">Check Live</button>
+        <button type="button">Github</button>
+        <button type="button">Gallery</button>
+      </div>
+      <div className="card-body">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+          voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Quas, voluptatibus. Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Vel quisquam consequuntur rerum eos omnis ut. Ipsum
+          consectetur non architecto, optio officia facere nulla laborum at
+          dolores, repudiandae vero esse omnis.
+        </p>
+      </div>
+    </div>
   );
 };
 
@@ -113,17 +118,25 @@ const JobExperience = (props) => {
 
 const Home = () => {
   const [show3d, setShow3d] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     AOS.init();
   }, []);
 
+  useEffect(() => {
+    if (!show3d) setShowLoading(true);
+  }, [show3d]);
+
   return (
     <>
       <div className="btn-3d">
         <button type="button" onClick={() => setShow3d(!show3d)}>
-          Show 3D
+          {show3d ? "Hide 3D" : "Show 3D (Experimental)"}
         </button>
+        <a href="https://aakash1234567.github.io/resume_site" target="_blank">
+          Visit v1
+        </a>
       </div>
       {!show3d ? (
         <>
@@ -168,19 +181,25 @@ const Home = () => {
               }}
             >
               <SocialPerson />
-              <a>
+              <a href="https://github.com/aakash1234567" target="_blank">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png"
                   alt=""
                 />
               </a>{" "}
-              <a>
+              <a
+                href="https://stackoverflow.com/users/14900445/aakash-khandelwal"
+                target="_blank"
+              >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/11023/11023941.png"
                   alt=""
                 />
               </a>
-              <a>
+              <a
+                href="https://www.linkedin.com/in/aakash-khandelwal-a700ab172/"
+                target="_blank"
+              >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/3536/3536569.png"
                   alt=""
@@ -251,14 +270,19 @@ const Home = () => {
               <Card />
             </div>
           </div>
-          <Loading />
         </>
       ) : (
-        <Suspense fallback={<Loading />}>
-          <div className="design">
-            <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
-          </div>
-        </Suspense>
+        <div className="design">
+          {showLoading && (
+            <div>
+              <Loading />
+            </div>
+          )}
+          <Spline
+            scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode"
+            onLoad={() => setShowLoading(false)}
+          />
+        </div>
       )}
     </>
   );
