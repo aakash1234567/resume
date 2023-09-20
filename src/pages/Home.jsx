@@ -112,142 +112,154 @@ const JobExperience = (props) => {
 };
 
 const Home = () => {
+  const [show3d, setShow3d] = useState(false);
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
     <>
-      <div className="banner_div" highlight={false}>
-        <span className="banner_span_0">
-          <Typed
-            strings={["Hello,", "नमस्ते,", "Bonjour,", "Ciao,"]}
-            typeSpeed={100}
-            backSpeed={50}
-            backDelay={5}
-            loop
-            smartBackspace
-          />
-          <p>
-            I'm Aakash Khandelwal, a full-stack web developer. Welcome to my
-            online portfolio.
-          </p>
-        </span>
-        <span className="banner_span_1">
-          <Robot />
-        </span>
-        <span className="banner_span_2">
-          <Spider />
-        </span>
-        <span className="banner_span_3">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png "
-            alt="profile Img"
-          />{" "}
-        </span>
-        <span
-          className="social-icons"
-          onMouseEnter={(e) => {
-            document.getElementById("hanging-svg").style.transform =
-              "translateX(10px)";
-            document.getElementById("hanging-svg").style.transition =
-              ".5s ease-in-out";
-          }}
-          onMouseLeave={(e) => {
-            document.getElementById("hanging-svg").style.transform =
-              "translateX(0px)";
-          }}
-        >
-          <SocialPerson />
-          <a>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png"
-              alt=""
-            />
-          </a>{" "}
-          <a>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/11023/11023941.png"
-              alt=""
-            />
-          </a>
-          <a>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3536/3536569.png"
-              alt=""
-            />
-          </a>
-        </span>
+      <div className="btn-3d">
+        <button type="button" onClick={() => setShow3d(!show3d)}>
+          Show 3D
+        </button>
       </div>
-      <div className="body-content">
-        <div className="left-content">
-          <div className="skills">
-            <h1>Education</h1>
-            <p>RTU, Kota - B. Tech (ECE)</p>
-            <p>AUGUST 2017 - AUGUST 2021</p>
-            <p>CGPA: 8.6</p>
-            <br />
-            <p>St. Paul’s Sr. Sec. School, Kota</p>
-            <p>12th (CBSE), 2017: Percentage: 88.6%</p>
-            <p>10th (CBSE), 2015: CGPA: 9.2</p>
+      {!show3d ? (
+        <>
+          <div className="banner_div" highlight={false}>
+            <span className="banner_span_0">
+              <Typed
+                strings={["Hello,", "नमस्ते,", "Bonjour,", "Ciao,"]}
+                typeSpeed={100}
+                backSpeed={50}
+                backDelay={5}
+                loop
+                smartBackspace
+              />
+              <p>
+                I'm Aakash Khandelwal, a full-stack web developer. Welcome to my
+                online portfolio.
+              </p>
+            </span>
+            <span className="banner_span_1">
+              <Robot />
+            </span>
+            <span className="banner_span_2">
+              <Spider />
+            </span>
+            <span className="banner_span_3">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png "
+                alt="profile Img"
+              />{" "}
+            </span>
+            <span
+              className="social-icons"
+              onMouseEnter={(e) => {
+                document.getElementById("hanging-svg").style.transform =
+                  "translateX(10px)";
+                document.getElementById("hanging-svg").style.transition =
+                  ".5s ease-in-out";
+              }}
+              onMouseLeave={(e) => {
+                document.getElementById("hanging-svg").style.transform =
+                  "translateX(0px)";
+              }}
+            >
+              <SocialPerson />
+              <a>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png"
+                  alt=""
+                />
+              </a>{" "}
+              <a>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/11023/11023941.png"
+                  alt=""
+                />
+              </a>
+              <a>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3536/3536569.png"
+                  alt=""
+                />
+              </a>
+            </span>
           </div>
-          <div className="skills">
-            <h1>Skills</h1>
-            <div className="skill-category">
-              <h3>Programming Languages</h3>
-              <ul>
-                {programmingLanguages.map((language, index) => (
-                  <li key={index}>{language}</li>
-                ))}
-              </ul>
+          <div className="body-content">
+            <div className="left-content">
+              <div className="skills">
+                <h1>Education</h1>
+                <p>RTU, Kota - B. Tech (ECE)</p>
+                <p>AUGUST 2017 - AUGUST 2021</p>
+                <p>CGPA: 8.6</p>
+                <br />
+                <p>St. Paul’s Sr. Sec. School, Kota</p>
+                <p>12th (CBSE), 2017: Percentage: 88.6%</p>
+                <p>10th (CBSE), 2015: CGPA: 9.2</p>
+              </div>
+              <div className="skills">
+                <h1>Skills</h1>
+                <div className="skill-category">
+                  <h3>Programming Languages</h3>
+                  <ul>
+                    {programmingLanguages.map((language, index) => (
+                      <li key={index}>{language}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="skill-category">
+                  <h3>Technologies/Frameworks</h3>
+                  <ul>
+                    {technologiesFrameworks.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="skill-category">
+                  <h3>Databases</h3>
+                  <ul>
+                    {databases.map((database, index) => (
+                      <li key={index}>{database}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="skill-category">
+                  <h3>Hardware Skills</h3>
+                  <ul>
+                    {hardwareSkills.map((hardware, index) => (
+                      <li key={index}>{hardware}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="skill-category">
-              <h3>Technologies/Frameworks</h3>
-              <ul>
-                {technologiesFrameworks.map((tech, index) => (
-                  <li key={index}>{tech}</li>
+            <div className="right-content">
+              <div className="featured">
+                <h1>Experience</h1>
+                {experiences.map((experience, index) => (
+                  <JobExperience key={index} {...experience} />
                 ))}
-              </ul>
-            </div>
-            <div className="skill-category">
-              <h3>Databases</h3>
-              <ul>
-                {databases.map((database, index) => (
-                  <li key={index}>{database}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="skill-category">
-              <h3>Hardware Skills</h3>
-              <ul>
-                {hardwareSkills.map((hardware, index) => (
-                  <li key={index}>{hardware}</li>
-                ))}
-              </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="right-content">
-          <div className="featured">
-            <h1>Experience</h1>
-            {experiences.map((experience, index) => (
-              <JobExperience key={index} {...experience} />
-            ))}
+          <div className="other-content">
+            <h1>Personal Projects</h1>
+            <div className="cards-container">
+              <Card />
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="other-content">
-        <h1>Personal Projects</h1>
-        <div className="cards-container">
-          <Card />
-        </div>
-      </div>
-      <Loading />
-      <Suspense fallback={<Loading />}>
-        <div className="design">
-          <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
-        </div>
-      </Suspense>
+          <Loading />
+        </>
+      ) : (
+        <Suspense fallback={<Loading />}>
+          <div className="design">
+            <Spline scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode" />
+          </div>
+        </Suspense>
+      )}
     </>
   );
 };

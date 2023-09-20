@@ -346,6 +346,7 @@ h1 {
   width: 100vw;
 }
 
-.collection_0 {
-  bottom: auto !important;
+.btn-3d {
+  position: absolute;
+  z-index: 10000;
 }
