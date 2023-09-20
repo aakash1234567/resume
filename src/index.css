@@ -345,3 +345,7 @@ h1 {
   height: 100vh;
   width: 100vw;
 }
+
+.collection_0 {
+  bottom: auto !important;
+}
