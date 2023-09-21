@@ -52,44 +52,116 @@ const technologiesFrameworks = [
   "Sequelize",
   "Ionic",
   "Rich Text Editors (Quill, CKEditor, etc)",
+  "Docker",
+  "Firebase",
   "Flask/Django (Beginner)",
   "Image and Video Processing",
   "Machine Learning",
 ];
-const databases = ["MongoDB", "MySQL", "PostgreSQL"];
+const databases = ["MongoDB", "MySQL", "PostgreSQL", "Redis"];
 const hardwareSkills = ["Microcontrollers"];
+const personalProjects = [
+  {
+    title: "Live Image Capturing Desktop App to generate Huge dataset",
+    body: <></>,
+    tech: ["Python", "Tkinter", "live image/video processing"],
+    github: "https://github.com/aakash1234567/image_dataset_generator",
+    site: "",
+    gallery: ["../img/image_generator_ss.png"],
+  },
+  {
+    title: "Live Hand Gesture recognition Desktop App",
+    body: <></>,
+    tech: ["Python", "Tkinter", "live image/video processing", "ML"],
+    github: "",
+    site: "https://www.publications.scrs.in/chapter/978-81-95502-01-1/10",
+    gallery: [],
+  },
+  {
+    title: "Supply Bot",
+    body: <></>,
+    tech: [
+      "Live Image and Video Processing",
+      "Python",
+      "Embedded C",
+      "Microcontrollers",
+    ],
+    github: "",
+    site: "",
+    gallery: [],
+  },
+  {
+    title: "API for decrypting password protected PDF",
+    body: <></>,
+    tech: ["Python", "Flask", "Docker", "Heroku"],
+    github: "https://github.com/aakash1234567/PDFOperator",
+    site: "",
+    gallery: [],
+  },
+  {
+    title: "Automated Google meet class attending bot",
+    body: <></>,
+    tech: ["Python", "Selenium"],
+    github: "https://github.com/aakash1234567/gmeet_attending_bot",
+    site: "",
+    gallery: [],
+  },
+  {
+    title: "Test Case Generator",
+    body: <></>,
+    tech: ["React", "Redux"],
+    github: "https://github.com/aakash1234567/test_case_generator",
+    site: "https://aakash1234567.github.io/test_case_generator/",
+    gallery: [],
+  },
+  {
+    title: "Suraksha Chakra NGO Website and CMS Dashboard",
+    body: <></>,
+    tech: ["React", "Nodejs", "Sequelize", "MySQL", "JWT"],
+    github: "",
+    site: "https://surakshachakra.myambar.org/",
+    gallery: [],
+  },
+  {
+    title: "Plan International Hub Website and CMS Dashboard",
+    body: <></>,
+    tech: ["React", "Nodejs", "Sequelize", "MySQL", "PassportJs"],
+    github: "",
+    site: "https://ovochub.org/",
+    gallery: [],
+  },
+];
 
 const Loading = () => {
   return <ClimbingBoxLoader color="#36d7b7" />;
 };
 
-const Card = () => {
-  const [astroposAActive, setAstroposActive] = useState(true);
-
-  useEffect(() => {
-    if (window.innerWidth < 500) {
-      setAstroposActive(false);
-    }
-  }, []);
+const Card = (details) => {
   return (
     <div className="card">
       <div className="card-header">
-        <h2>Project 1</h2>
+        <h2>{details.title}</h2>
       </div>
       <div className="card-links">
-        <button type="button">Check Live</button>
-        <button type="button">Github</button>
-        <button type="button">Gallery</button>
+        {details.site && (
+          <a href={details.site} target="_blank">
+            Check Live
+          </a>
+        )}
+        {details.github && (
+          <a href={details.github} target="_blank">
+            Code
+          </a>
+        )}
+        {!!details.gallery.length && <button type="button">Gallery</button>}
       </div>
       <div className="card-body">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-          voluptatibus.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Quas, voluptatibus. Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Vel quisquam consequuntur rerum eos omnis ut. Ipsum
-          consectetur non architecto, optio officia facere nulla laborum at
-          dolores, repudiandae vero esse omnis.
-        </p>
+        <p>{details.body}</p>
+      </div>
+      <div className="card-footer">
+        {details.tech.map((tech, index) => (
+          <span key={index}>{tech}</span>
+        ))}
       </div>
     </div>
   );
@@ -254,6 +326,24 @@ const Home = () => {
                   </ul>
                 </div>
               </div>
+              <div className="skills">
+                <h1>Current Focused Skill Set</h1>
+                <div className="skill-category">
+                  <ul>
+                    <li>Python</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>Nodejs</li>
+                  </ul>
+                </div>
+                <h4
+                  style={{
+                    marginBottom: "0px",
+                  }}
+                >
+                  Note: Beign a Geek I am open to all new challenges
+                </h4>
+              </div>
             </div>
             <div className="right-content">
               <div className="featured">
@@ -262,12 +352,38 @@ const Home = () => {
                   <JobExperience key={index} {...experience} />
                 ))}
               </div>
+              <div className="featured">
+                <h1>Awards and Recognition</h1>
+                <div className="job-experience">
+                  <ul>
+                    <li>
+                      eYantra Robotics Competition IIT Bombay, 3rd position
+                    </li>{" "}
+                    <li>AZ-900: Microsoft Azure Fundamentals certified</li>{" "}
+                    <li>
+                      Coursera Machine Learning by Stanford University certified
+                    </li>
+                    <li>
+                      MJF Code 19 Hackathon [The entry is recognized to be
+                      amongst the Top 250 entries submitted during the
+                      #MJFCODE19 Hackathon.]
+                    </li>
+                    <li>IoT challenge Exhibition, Runner-up</li>
+                    <li>Robowar ,IGNUS’19 ,IIT Jodhpur[1st position]</li>
+                    <li>Rajya Puraskar, Scouts</li>
+                    <li>Robotics Club [Mentor]</li>
+                    <li>Developers Students Club [Core Team Member]</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <div className="other-content">
             <h1>Personal Projects</h1>
             <div className="cards-container">
-              <Card />
+              {personalProjects.map((project, index) => (
+                <Card key={index} {...project} />
+              ))}
             </div>
           </div>
         </>
