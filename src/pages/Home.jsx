@@ -341,7 +341,7 @@ const Home = () => {
                     marginBottom: "0px",
                   }}
                 >
-                  Note: Beign a Geek I am open to all new challenges
+                  Note: Being a Geek I am open to all new challenges
                 </h4>
               </div>
             </div>
