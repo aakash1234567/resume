@@ -9,9 +9,24 @@ import SocialPerson from "./SocialPerson";
 import Atropos from "atropos/react";
 import Spline from "@splinetool/react-spline";
 import { ClimbingBoxLoader } from "react-spinners";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "atropos/css";
 
+const slickSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
 const experiences = [
   {
     company: "TCS, Pune",
@@ -67,7 +82,7 @@ const personalProjects = [
     tech: ["Python", "Tkinter", "live image/video processing"],
     github: "https://github.com/aakash1234567/image_dataset_generator",
     site: "",
-    gallery: ["../img/image_generator_ss.png"],
+    gallery: ["/resume/img/image_generator_ss.png"],
   },
   {
     title: "Live Hand Gesture recognition Desktop App",
@@ -88,7 +103,13 @@ const personalProjects = [
     ],
     github: "",
     site: "",
-    gallery: [],
+    gallery: [
+      "https://www.youtube.com/embed/ks7AAVTwx0o",
+      "https://www.youtube.com/embed/R5BXwXXFK5s",
+      "/resume/img/supply_bot1.jpeg",
+      "/resume/img/supply_bot2.jpeg",
+      "https://www.youtube.com/embed/dxbtqosUrfo",
+    ],
   },
   {
     title: "API for decrypting password protected PDF",
@@ -130,39 +151,73 @@ const personalProjects = [
     site: "https://ovochub.org/",
     gallery: [],
   },
+  {
+    title: "Smart Home Automation",
+    body: <></>,
+    tech: ["IoT", "Microcontroller", "Embedded C", "HTML/CSS", "JS"],
+    github: "",
+    site: "",
+    gallery: [
+      "https://www.youtube.com/embed/ws6J88ETLpI",
+      "/resume/img/home_automation1.jpg",
+      "/resume/img/home_automation2.jpeg",
+    ],
+  },
+  {
+    title: "Opencv Fun",
+    body: <></>,
+    tech: ["React", "Nodejs", "Sequelize", "MySQL", "PassportJs"],
+    github: "",
+    site: "https://ovochub.org/",
+    gallery: [
+      "https://www.youtube.com/embed/A7Od4vp37a4",
+      "https://www.youtube.com/embed/__3-nF-aGL0",
+    ],
+  },
 ];
 
 const Loading = () => {
   return <ClimbingBoxLoader color="#36d7b7" />;
 };
 
-const Card = (details) => {
+const Card = ({ onOpenModal, ...details }) => {
   return (
-    <div className="card">
-      <div className="card-header">
-        <h2>{details.title}</h2>
-      </div>
-      <div className="card-links">
-        {details.site && (
-          <a href={details.site} target="_blank">
-            Check Live
-          </a>
-        )}
-        {details.github && (
-          <a href={details.github} target="_blank">
-            Code
-          </a>
-        )}
-        {!!details.gallery.length && <button type="button">Gallery</button>}
-      </div>
-      <div className="card-body">
-        <p>{details.body}</p>
-      </div>
-      <div className="card-footer">
-        {details.tech.map((tech, index) => (
-          <span key={index}>{tech}</span>
-        ))}
-      </div>
+    <div className="card-rounded">
+      <div className="card">
+        <div className="card-header">
+          <h2>{details.title}</h2>
+        </div>
+        <div className="card-links">
+          {details.site && (
+            <a href={details.site} target="_blank">
+              Check Live
+            </a>
+          )}
+          {details.github && (
+            <a href={details.github} target="_blank">
+              Code
+            </a>
+          )}
+          {!!details.gallery.length && (
+            <button
+              type="button"
+              onClick={() =>
+                onOpenModal({ gallery: details.gallery, title: details.title })
+              }
+            >
+              Gallery
+            </button>
+          )}
+        </div>
+        <div className="card-body">
+          <p>{details.body}</p>
+        </div>
+        <div className="card-footer">
+          {details.tech.map((tech, index) => (
+            <span key={index}>{tech}</span>
+          ))}
+        </div>
+      </div>{" "}
     </div>
   );
 };
@@ -191,6 +246,24 @@ const JobExperience = (props) => {
 const Home = () => {
   const [show3d, setShow3d] = useState(false);
   const [showLoading, setShowLoading] = useState(true);
+  const [openGalleryDisplay, setOpenGalleryDisplay] = useState({
+    state: false,
+    title: "",
+    array: [],
+  });
+
+  const onOpenModal = ({ gallery, title }) =>
+    setOpenGalleryDisplay({
+      state: true,
+      array: gallery,
+      title,
+    });
+  const onCloseModal = () =>
+    setOpenGalleryDisplay({
+      state: false,
+      array: [],
+      title: "",
+    });
 
   useEffect(() => {
     AOS.init();
@@ -202,6 +275,49 @@ const Home = () => {
 
   return (
     <>
+      <Modal open={openGalleryDisplay.state} onClose={onCloseModal} center>
+        <h2>{openGalleryDisplay.title}</h2>
+        <Swiper
+          pagination={{
+            type: "progressbar",
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {openGalleryDisplay.array.map((image, index) => (
+            <SwiperSlide key={index}>
+              {image.includes("embed") ? (
+                <iframe
+                  src={image}
+                  title={openGalleryDisplay.title}
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <img src={image} alt="" />
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* <Slider {...slickSettings}>
+          {openGalleryDisplay.array.map((image, index) => (
+            <div key={index}>
+              {image.includes("embed") ? (
+                <iframe
+                  width="560"
+                  height="315"
+                  src={image}
+                  title={openGalleryDisplay.title}
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <img src={image} alt="" />
+              )}
+            </div>
+          ))}
+        </Slider> */}
+      </Modal>
       <div className="btn-3d">
         <button type="button" onClick={() => setShow3d(!show3d)}>
           {show3d ? "Hide 3D" : "Show 3D (Experimental)"}
@@ -339,6 +455,7 @@ const Home = () => {
                 <h4
                   style={{
                     marginBottom: "0px",
+                    color: "#d4ffd4",
                   }}
                 >
                   Note: Being a Geek I am open to all new challenges
@@ -382,7 +499,7 @@ const Home = () => {
             <h1>Personal Projects</h1>
             <div className="cards-container">
               {personalProjects.map((project, index) => (
-                <Card key={index} {...project} />
+                <Card key={index} {...project} onOpenModal={onOpenModal} />
               ))}
             </div>
           </div>
@@ -397,6 +514,7 @@ const Home = () => {
           <Spline
             scene="https://prod.spline.design/oABiyeWN8CC7OTzx/scene.splinecode"
             onLoad={() => setShowLoading(false)}
+            renderOnDemand={true}
           />
         </div>
       )}
