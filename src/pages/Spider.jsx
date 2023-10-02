@@ -220,9 +220,9 @@ const Spider = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
-        class="peas"
+        className="peas"
       >
-        <g transform="scale(.115)" class="pea pea-1">
+        <g transform="scale(.115)" className="pea pea-1">
           <line
             id="Line 1"
             x1="316.037"
@@ -230,7 +230,7 @@ const Spider = () => {
             x2="69.0374"
             y2="320.764"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 2"
@@ -239,7 +239,7 @@ const Spider = () => {
             x2="22.3376"
             y2="409.531"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 7"
@@ -248,7 +248,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.917601 -0.397503 -0.397503 -0.917601 690 414)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 8"
@@ -257,7 +257,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.568755 0.822507 0.822507 -0.568755 937 307)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 3"
@@ -266,7 +266,7 @@ const Spider = () => {
             x2="27.3801"
             y2="480.979"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 4"
@@ -275,7 +275,7 @@ const Spider = () => {
             x2="14.5371"
             y2="580.456"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 9"
@@ -284,7 +284,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.998602 -0.0528616 -0.0528616 -0.998602 715 480.229)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 10"
@@ -293,7 +293,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.246516 0.969139 0.969139 -0.246516 983.804 466)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 5"
@@ -302,7 +302,7 @@ const Spider = () => {
             x2="33.2935"
             y2="638.657"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 6"
@@ -311,7 +311,7 @@ const Spider = () => {
             x2="40.9855"
             y2="738.664"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 11"
@@ -320,7 +320,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.988429 0.151685 0.151685 -0.988429 666 603)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <line
             id="Line 12"
@@ -329,7 +329,7 @@ const Spider = () => {
             y2="-15"
             transform="matrix(0.04391 0.999036 0.999036 -0.04391 932.066 643.831)"
             stroke="black"
-            stroke-width="30"
+            strokeWidth="30"
           />
           <ellipse
             id="Ellipse 1"
@@ -341,7 +341,7 @@ const Spider = () => {
           />
 
           <rect
-            class="teeth"
+            className="teeth"
             id="Rectangle 1"
             x="583"
             y="587.742"
@@ -351,23 +351,23 @@ const Spider = () => {
             fill="white"
           />
           <path
-            class="tongue"
+            className="tongue"
             id="Vector 2"
             d="M493 633C493 660.845 504 662.512 504 633H493Z"
             stroke="white"
-            stroke-width="39"
+            strokeWidth="39"
           />
 
           <path
             id="Vector 1"
             d="M636 550C603.806 591.288 522.394 616 454 616"
             stroke="white"
-            stroke-width="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <ellipse
-            class="eye eye-left"
+            className="eye eye-left"
             id="Ellipse 3"
             cx="592"
             cy="451.5"
@@ -376,7 +376,7 @@ const Spider = () => {
             fill="white"
           />
           <ellipse
-            class="eye eye-right"
+            className="eye eye-right"
             id="Ellipse 2"
             cx="390"
             cy="451.5"
@@ -385,7 +385,7 @@ const Spider = () => {
             fill="white"
           />
           <ellipse
-            class="pupil pupil-right"
+            className="pupil pupil-right"
             id="Ellipse 4"
             cx="390.5"
             cy="466"
@@ -394,7 +394,7 @@ const Spider = () => {
             fill="black"
           />
           <ellipse
-            class="pupil pupil-left"
+            className="pupil pupil-left"
             id="Ellipse 5"
             cx="591.5"
             cy="466"
@@ -408,7 +408,7 @@ const Spider = () => {
             x2="498"
             y2="320"
             stroke="black"
-            stroke-width="8"
+            strokeWidth="8"
           />
         </g>
       </svg>

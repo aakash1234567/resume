@@ -31,19 +31,26 @@ const Robot = () => {
       >
         <rect x="51" y="21" width="7" height="230" fill="#C4C4C4" />
         <path
-          class="head"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          className="head"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M244.591 258C253.174 245.95 258 232.368 258 218C258 168.294 200.245 128 129 128C57.7553 128 0 168.294 0 218C0 232.368 4.82612 245.95 13.4091 258H244.591Z"
           fill="#9D7FF2"
         />
         <rect x="107" y="193" width="44" height="81" fill="#9D7FF2" />
-        <ellipse class="eye1" cx="198" cy="207" rx="22" ry="26" fill="black" />
+        <ellipse
+          className="eye1"
+          cx="198"
+          cy="207"
+          rx="22"
+          ry="26"
+          fill="black"
+        />
         <rect y="274" width="261" height="265" rx="40" fill="#9D7FF2" />
         <rect x="38" y="495" width="47" height="88" rx="22" fill="#9D7FF2" />
         <rect x="173" y="495" width="47" height="88" rx="22" fill="#9D7FF2" />
         <rect
-          class="hand"
+          className="hand"
           x="349.814"
           y="274"
           width="47"
@@ -52,7 +59,7 @@ const Robot = () => {
           fill="#9D7FF2"
         />
         <rect
-          class="box"
+          className="box"
           x="38"
           y="359"
           width="182"
@@ -63,7 +70,7 @@ const Robot = () => {
         <rect x="173" y="406" width="66" height="38" fill="#775EBD" />
         <ellipse cx="53" cy="13.5" rx="15" ry="13.5" fill="#C4C4C4" />
         <path
-          class="eye2"
+          className="eye2"
           d="M92 204C92 218.359 82.1503 230 70 230C57.8497 230 48 218.359 48 204C48 189.641 57.8497 178 70 178C82.1503 178 92 189.641 92 204Z"
           fill="#090808"
         />

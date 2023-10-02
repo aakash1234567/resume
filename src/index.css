@@ -368,6 +368,9 @@ h1 {
 }
 
 .card-body {
+  text-align: justify;
+  line-height: 19px;
+  font-family: math;
 }
 
 .card-links {

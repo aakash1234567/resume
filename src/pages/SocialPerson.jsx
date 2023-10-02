@@ -32,14 +32,14 @@ const SocialPerson = () => {
         <circle cx="33" cy="10" r="4" fill="white" />
         <mask id="path-9-inside-1_201_21" fill="white">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z"
           />
         </mask>
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z"
           fill="#ffffff"
         />

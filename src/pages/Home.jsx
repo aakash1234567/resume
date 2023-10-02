@@ -78,7 +78,22 @@ const hardwareSkills = ["Microcontrollers"];
 const personalProjects = [
   {
     title: "Live Image Capturing Desktop App to generate Huge dataset",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          Developed a versatile desktop application for live image capturing,
+          catering to the generation of extensive datasets for model training.
+          <br />
+          The app offers a range of features:{" "}
+        </p>
+        <ul>
+          <li>exporting images as PNG or JPG</li>
+          <li>grayscale capture, image flipping</li>
+          <li>autonomous multi-image capture at predefined intervals</li>
+          <li>change brightness and contrast</li>
+        </ul>
+      </>
+    ),
     tech: ["Python", "Tkinter", "live image/video processing"],
     github: "https://github.com/aakash1234567/image_dataset_generator",
     site: "",
@@ -86,7 +101,18 @@ const personalProjects = [
   },
   {
     title: "Live Hand Gesture recognition Desktop App",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          Developed a robust desktop application, leveraging Python, Tkinter,
+          and machine learning, to recognize sign language alphabets through
+          live hand gesture analysis. This innovative solution utilizes
+          real-time image and video processing, allowing users to communicate
+          effectively using sign language gestures. It provides an inclusive and
+          accessible means of communication for the hearing-impaired community.
+        </p>
+      </>
+    ),
     tech: ["Python", "Tkinter", "live image/video processing", "ML"],
     github: "",
     site: "https://www.publications.scrs.in/chapter/978-81-95502-01-1/10",
@@ -94,7 +120,17 @@ const personalProjects = [
   },
   {
     title: "Supply Bot",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          This project was from a 7 month long competition of eYantra IIT
+          Bombay. We were required to detect the environment ie. arena ,design
+          the fully functional bot and according to some constraints given to us
+          we have to supply(hit) the aids(coins) to the center of arena. A
+          camera being mounted at the top is used to guide the bot.
+        </p>
+      </>
+    ),
     tech: [
       "Live Image and Video Processing",
       "Python",
@@ -112,16 +148,23 @@ const personalProjects = [
     ],
   },
   {
-    title: "API for decrypting password protected PDF",
-    body: <></>,
-    tech: ["Python", "Flask", "Docker", "Heroku"],
-    github: "https://github.com/aakash1234567/PDFOperator",
-    site: "",
-    gallery: [],
-  },
-  {
     title: "Automated Google meet class attending bot",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          Google Meet attending Bot is an automated script to attend google
+          meets, it also listens to users speech and can be used to respond back
+          if your name is called. Feel free to explore. <br />
+          Features:
+        </p>
+        <ul>
+          <li>Join Google Meet</li>
+          <li>Disable Camera</li>
+          <li>Disable Mic</li>
+          <li>Listen to Audio and respond to specific scenarios</li>
+        </ul>
+      </>
+    ),
     tech: ["Python", "Selenium"],
     github: "https://github.com/aakash1234567/gmeet_attending_bot",
     site: "",
@@ -129,7 +172,16 @@ const personalProjects = [
   },
   {
     title: "Test Case Generator",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          Test Case Generator is an opensource tool to create Test cass of
+          desired type to use in Competitive coding using a simple, easy-to-use
+          interface. You can create arrays, strings, char patterns and use a
+          variety of handy features like copy, regenerate, change constraints.
+        </p>
+      </>
+    ),
     tech: ["React", "Redux"],
     github: "https://github.com/aakash1234567/test_case_generator",
     site: "https://aakash1234567.github.io/test_case_generator/",
@@ -137,7 +189,18 @@ const personalProjects = [
   },
   {
     title: "Suraksha Chakra NGO Website and CMS Dashboard",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          A platform dedicated to women's safety. Empowering women to register
+          complaints and track their progress, the system promotes transparency
+          and accountability. Additionally, it facilitates the creation of
+          informative blogs, enables the upload of essential tools and reports
+          for public awareness, and offers a comprehensive solution for
+          addressing women's safety concerns.
+        </p>
+      </>
+    ),
     tech: ["React", "Nodejs", "Sequelize", "MySQL", "JWT"],
     github: "",
     site: "https://surakshachakra.myambar.org/",
@@ -145,7 +208,18 @@ const personalProjects = [
   },
   {
     title: "Plan International Hub Website and CMS Dashboard",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          A fully dynamic web solution with separate CMS dashboard Empowering
+          users to craft and publish blogs, articles, and engage in real-time
+          group chats. Offers seamless management of all contents like events,
+          webinars, campaigns and having robust role-based content management,
+          ensuring a secure, inclusive, and interactive digital ecosystem. This
+          project underscores my prowess in full-stack development.
+        </p>
+      </>
+    ),
     tech: ["React", "Nodejs", "Sequelize", "MySQL", "PassportJs"],
     github: "",
     site: "https://ovochub.org/",
@@ -153,7 +227,16 @@ const personalProjects = [
   },
   {
     title: "Smart Home Automation",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          Designed a functional Smart Home Automation model, accessible through
+          voice commands, a website, and an Android app. Additionally, we
+          created a dynamic IoT website for issuing instructions and remotely
+          controlling microcontrollers from any location.
+        </p>
+      </>
+    ),
     tech: ["IoT", "Microcontroller", "Embedded C", "HTML/CSS", "JS"],
     github: "",
     site: "",
@@ -165,7 +248,17 @@ const personalProjects = [
   },
   {
     title: "Opencv Fun",
-    body: <></>,
+    body: (
+      <>
+        <p>
+          I've created a couple of entertaining OpenCV projects. In the first
+          one, I used object detection and motion tracking to play the Chrome
+          dino game. The second project involves making a person appear
+          invisible by detecting their skin color and displaying their borders
+          in a separate frame.
+        </p>
+      </>
+    ),
     tech: ["React", "Nodejs", "Sequelize", "MySQL", "PassportJs"],
     github: "",
     site: "https://ovochub.org/",
@@ -173,6 +266,21 @@ const personalProjects = [
       "https://www.youtube.com/embed/A7Od4vp37a4",
       "https://www.youtube.com/embed/__3-nF-aGL0",
     ],
+  },
+  {
+    title: "API for decrypting password protected PDF",
+    body: (
+      <>
+        <p>
+          As the name suggests API for decrypting password protected Pdf was
+          hosted on heroku using docker container.
+        </p>
+      </>
+    ),
+    tech: ["Python", "Flask", "Docker", "Heroku"],
+    github: "https://github.com/aakash1234567/PDFOperator",
+    site: "",
+    gallery: [],
   },
 ];
 
@@ -209,9 +317,7 @@ const Card = ({ onOpenModal, ...details }) => {
             </button>
           )}
         </div>
-        <div className="card-body">
-          <p>{details.body}</p>
-        </div>
+        <div className="card-body">{details.body}</div>
         <div className="card-footer">
           {details.tech.map((tech, index) => (
             <span key={index}>{tech}</span>
@@ -328,7 +434,7 @@ const Home = () => {
       </div>
       {!show3d ? (
         <>
-          <div className="banner_div" highlight={false}>
+          <div className="banner_div">
             <span className="banner_span_0">
               <Typed
                 strings={["Hello,", "नमस्ते,", "Bonjour,", "Ciao,"]}

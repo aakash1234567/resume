@@ -8,8 +8,8 @@
 <circle cx="19" cy="10" r="4" fill="black"/>
 <circle cx="33" cy="10" r="4" fill="black"/>
 <mask id="path-9-inside-1_201_21" fill="white">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z"/>
 </mask>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z" fill="#D9D9D9"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M16 19C16 22.866 20.4772 26 26 26C31.5228 26 36 22.866 36 19H16Z" fill="#D9D9D9"/>
 <path d="M16 19V18H15V19H16ZM36 19H37V18H36V19ZM26 25C23.4186 25 21.1245 24.266 19.5024 23.1305C17.8772 21.9929 17 20.5171 17 19H15C15 21.3489 16.3614 23.3731 18.3555 24.769C20.3527 26.167 23.0586 27 26 27V25ZM35 19C35 20.5171 34.1228 21.9929 32.4976 23.1305C30.8755 24.266 28.5814 25 26 25V27C28.9414 27 31.6473 26.167 33.6445 24.769C35.6386 23.3731 37 21.3489 37 19H35ZM36 18H16V20H36V18Z" fill="black" mask="url(#path-9-inside-1_201_21)"/>
 </svg>
